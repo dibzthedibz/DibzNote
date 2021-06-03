@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryEdit.cs" />
     <Compile Include="CategoryCreate.cs" />
     <Compile Include="CategoryDetail.cs" />
     <Compile Include="CategoryListItem.cs" />
