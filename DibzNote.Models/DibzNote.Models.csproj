@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CategoryCreate.cs" />
     <Compile Include="CategoryDetail.cs" />
+    <Compile Include="CategoryListItem.cs" />
     <Compile Include="NoteCreate.cs" />
     <Compile Include="NoteDetail.cs" />
     <Compile Include="NoteEdit.cs" />

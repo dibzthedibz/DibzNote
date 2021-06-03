@@ -33,12 +33,6 @@ namespace DibzNote.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
-        public static object GetCats()
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<NoteListItem> GetNotes()
         {
             using (var ctx = new ApplicationDbContext())
