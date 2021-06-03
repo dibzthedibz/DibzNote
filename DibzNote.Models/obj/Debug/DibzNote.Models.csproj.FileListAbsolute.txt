@@ -4,3 +4,6 @@ S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Mod
 S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Models\obj\Debug\DibzNote.Models.csproj.CoreCompileInputs.cache
 S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Models\obj\Debug\DibzNote.Models.dll
 S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Models\obj\Debug\DibzNote.Models.pdb
+S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Models\bin\Debug\xunit.abstractions.dll
+S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Models\bin\Debug\xunit.abstractions.xml
+S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Models\obj\Debug\DibzNote.Models.csproj.CopyComplete
