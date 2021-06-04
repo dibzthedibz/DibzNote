@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace DibzNote.Models
 {
-    public class NoteListItem
+    public class CategoryEdit
     {
-        public int NoteId { get; set; }
+        public int CategoryId { get; set; }
+
+        [Required]
+        [MinLength(2, ErrorMessage = "Title must be more than 2 chars.")]
+        [MaxLength(16, ErrorMessage = "Title must be less than 16 chars.")]
         public string Title { get; set; }
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
-        public int? CategoryId { get; set; }
     }
 }

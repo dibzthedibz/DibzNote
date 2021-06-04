@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DibzNote.Models
 {
-    public class CategoryDetail
+    public class CategoryListItem
     {
         public int CategoryId { get; set; }
         public string Title { get; set; }
-        public List<NoteListItem> Notes { get; set; }
     }
 }

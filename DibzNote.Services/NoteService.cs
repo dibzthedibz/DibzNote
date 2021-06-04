@@ -33,12 +33,6 @@ namespace DibzNote.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
-        public static object GetCats()
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<NoteListItem> GetNotes()
         {
             using (var ctx = new ApplicationDbContext())
@@ -53,6 +47,7 @@ namespace DibzNote.Services
                                 {
                                     NoteId = e.NoteId,
                                     Title = e.Title,
+                                    CategoryId = e.CategoryId,
                                     CreatedUtc = e.CreatedUtc
                                 }
                         );
@@ -88,8 +83,10 @@ namespace DibzNote.Services
                     ctx
                         .Notes
                         .Single(e => e.NoteId == model.NoteId && e.OwnerId == _userId);
+                entity.NoteId = model.NoteId;
                 entity.Title = model.Title;
                 entity.Content = model.Content;
+                entity.CategoryId = model.CategoryId;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
