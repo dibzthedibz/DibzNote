@@ -58,7 +58,7 @@ namespace DibzNote.WebAPI.Controllers
                 return InternalServerError();
             }
 
-            return Ok();
+            return Ok("Successfully Deleted Category!");
         }
     }
 }

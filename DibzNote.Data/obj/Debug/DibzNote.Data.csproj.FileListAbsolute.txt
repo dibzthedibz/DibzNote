@@ -36,3 +36,4 @@ S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Dat
 S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Data\obj\Debug\DibzNote.Data.Migrations.NoteAdded.resources
 S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Data\obj\Debug\DibzNote.Data.csproj.GenerateResource.cache
 S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Data\obj\Debug\DibzNote.Data.Migrations.CategoryAdded.resources
+S:\Bootcamp Work Folder Boom\Blue Badge\ClassWork\DibzNote\DibzNote\DibzNote.Data\obj\Debug\DibzNote.Data.Migrations.IsStarredAdded.resources
