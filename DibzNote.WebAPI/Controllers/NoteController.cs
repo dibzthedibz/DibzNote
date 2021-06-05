@@ -19,14 +19,14 @@ namespace DibzNote.WebAPI.Controllers
             var noteService = new NoteService(userId);
             return noteService;
         }
-
+        [HttpGet]
         public IHttpActionResult Get()
         {
             NoteService noteService = CreateNoteService();
             var notes = noteService.GetNotes();
             return Ok(notes);
         }
-
+        [HttpPost]
         public IHttpActionResult Post(NoteCreate note)
         {
             if (!ModelState.IsValid)
@@ -39,14 +39,22 @@ namespace DibzNote.WebAPI.Controllers
 
             return Ok();
         }
-
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             NoteService noteService = CreateNoteService();
             var note = noteService.GetNoteById(id);
             return Ok(note);
         }
-
+        [HttpGet]
+        [Route("api/Notes/IsStarred")]
+        public IHttpActionResult GetByStar()
+        {
+            NoteService noteService = CreateNoteService();
+            var notes = noteService.GetNoteByStarred();
+            return Ok(notes);
+        }
+        [HttpPut]
         public IHttpActionResult Put(NoteEdit note)
         {
             if (!ModelState.IsValid)
@@ -59,15 +67,31 @@ namespace DibzNote.WebAPI.Controllers
 
             return Ok("Score.");
         }
-
-        public IHttpActionResult Delete(int id)
+        [HttpPut]
+        [Route("api/Notes/AddStar")]
+        public IHttpActionResult AddStarToNote(int id)
         {
-            var service = CreateNoteService();
+            {
+                var service = CreateNoteService();
 
-            if (!service.DeleteNote(id))
-                return InternalServerError();
+                if (!service.AddStar(id))
+                    return InternalServerError();
 
-            return Ok();
+                return Ok($"Star Added to Note number: {id}");
+            }
+        }
+        [HttpPut]
+        [Route("api/Notes/RemoveStar")]
+        public IHttpActionResult RemoveStarFromNote(int id)
+        {
+            {
+                var service = CreateNoteService();
+
+                if (!service.RemoveStar(id))
+                    return InternalServerError();
+
+                return Ok($"Star Removed From Note number: {id}");
+            }
         }
     }
 }

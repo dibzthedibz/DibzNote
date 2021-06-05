@@ -7,13 +7,13 @@ namespace DibzNote.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class IsStarredAdded : IMigrationMetadata
+    public sealed partial class AddRemoveStarRemoved : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(IsStarredAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddRemoveStarRemoved));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106041429283_IsStarredAdded"; }
+            get { return "202106051602072_AddRemoveStarRemoved"; }
         }
         
         string IMigrationMetadata.Source

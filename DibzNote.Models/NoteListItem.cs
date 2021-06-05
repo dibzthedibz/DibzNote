@@ -14,5 +14,6 @@ namespace DibzNote.Models
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         public int? CategoryId { get; set; }
+        public bool IsStarred { get; set; }
     }
 }
