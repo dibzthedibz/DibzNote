@@ -31,5 +31,8 @@ namespace DibzNote.Data
         [ForeignKey(nameof(Category))]
         public int? CategoryId { get; set; }
         public virtual Category Category { get; set; }
+        public bool IsStarred { get; set; }
+
+        
     }
 }

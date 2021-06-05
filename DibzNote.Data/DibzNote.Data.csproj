@@ -94,9 +94,17 @@
     <Compile Include="Migrations\202106030008049_CategoryAdded.Designer.cs">
       <DependentUpon>202106030008049_CategoryAdded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106041429283_IsStarredAdded.cs" />
-    <Compile Include="Migrations\202106041429283_IsStarredAdded.Designer.cs">
-      <DependentUpon>202106041429283_IsStarredAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202106041448321_IsStarredAdded.cs" />
+    <Compile Include="Migrations\202106041448321_IsStarredAdded.Designer.cs">
+      <DependentUpon>202106041448321_IsStarredAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106051542093_AddRemoveStarAdded.cs" />
+    <Compile Include="Migrations\202106051542093_AddRemoveStarAdded.Designer.cs">
+      <DependentUpon>202106051542093_AddRemoveStarAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106051602072_AddRemoveStarRemoved.cs" />
+    <Compile Include="Migrations\202106051602072_AddRemoveStarRemoved.Designer.cs">
+      <DependentUpon>202106051602072_AddRemoveStarRemoved.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -113,8 +121,14 @@
     <EmbeddedResource Include="Migrations\202106030008049_CategoryAdded.resx">
       <DependentUpon>202106030008049_CategoryAdded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106041429283_IsStarredAdded.resx">
-      <DependentUpon>202106041429283_IsStarredAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106041448321_IsStarredAdded.resx">
+      <DependentUpon>202106041448321_IsStarredAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106051542093_AddRemoveStarAdded.resx">
+      <DependentUpon>202106051542093_AddRemoveStarAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106051602072_AddRemoveStarRemoved.resx">
+      <DependentUpon>202106051602072_AddRemoveStarRemoved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -25,7 +25,8 @@ namespace DibzNote.Services
                     OwnerId = _userId,
                     Title = model.Title,
                     Content = model.Content,
-                    CreatedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now,
+                    IsStarred = model.IsStarred
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -48,7 +49,8 @@ namespace DibzNote.Services
                                     NoteId = e.NoteId,
                                     Title = e.Title,
                                     CategoryId = e.CategoryId,
-                                    CreatedUtc = e.CreatedUtc
+                                    CreatedUtc = e.CreatedUtc,
+                                    IsStarred = e.IsStarred
                                 }
                         );
                 return query.ToArray();
@@ -70,11 +72,33 @@ namespace DibzNote.Services
                         Title = entity.Title,
                         Content = entity.Content,
                         CreatedUtc = entity.CreatedUtc,
-                        ModifiedUtc = entity.ModifiedUtc
+                        ModifiedUtc = entity.ModifiedUtc,
+                        IsStarred = entity.IsStarred
                     };
             }
         }
-
+        public IEnumerable<NoteListItem> GetNoteByStarred()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Notes
+                    .Where(e => e.IsStarred == true)
+                    .Select(
+                        e =>
+                            new NoteListItem
+                            {
+                                NoteId = e.NoteId,
+                                Title = e.Title,
+                                CategoryId = e.CategoryId,
+                                CreatedUtc = e.CreatedUtc,
+                                IsStarred = e.IsStarred
+                            }
+                        );
+                return query.ToArray();
+            }
+        }
         public bool Updatenote(NoteEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -88,11 +112,35 @@ namespace DibzNote.Services
                 entity.Content = model.Content;
                 entity.CategoryId = model.CategoryId;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                entity.IsStarred = model.IsStarred;
 
                 return ctx.SaveChanges() == 1;
             }
         }
-
+        public bool AddStar(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Notes
+                        .Single(e => e.NoteId == id && e.OwnerId == _userId);
+                entity.IsStarred = true;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool RemoveStar(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Notes
+                        .Single(e => e.NoteId == id && e.OwnerId == _userId);
+                entity.IsStarred = false;
+                return ctx.SaveChanges() == 1;
+            }
+        }
         public bool DeleteNote(int noteId)
         {
             using (var ctx = new ApplicationDbContext())
