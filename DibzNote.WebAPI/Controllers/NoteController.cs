@@ -20,11 +20,15 @@ namespace DibzNote.WebAPI.Controllers
             return noteService;
         }
         [HttpGet]
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(int? page)
         {
+            const int pageSize = 1;
             NoteService noteService = CreateNoteService();
             var notes = noteService.GetNotes();
-            return Ok(notes);
+            var pagedNotes = notes.Skip((page ?? 0) * pageSize)
+                                  .Take(pageSize)
+                                  .ToList();
+            return Ok(pagedNotes);
         }
         [HttpPost]
         public IHttpActionResult Post(NoteCreate note)
